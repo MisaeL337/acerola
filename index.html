@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa da Acerola & Polpas Naturais</title>
+    <!-- Conexão com o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Casa da Acerola</h1>
+        <p>Ser saudável é uma escolha</p>
+    </header>
+
+    <!-- Hero Section (Capa) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>A Acerola mais doce da região!</h2>
+            <p>Frutas frescas selecionadas e polpas 100% naturais.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <!-- Seção de Produtos -->
+        <div class="section-header">
+            <h3 class="section-title">Nossos Produtos</h3>
+        </div>
+
+        <div class="produtos-grid">
+            
+            <!-- O CARRO CHEFE -->
+            <article class="card destaque">
+                <div class="card-img">
+                    <img src="fotos/acerola-4791618_640.jpg" alt="Acerola Fresca" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                    <span class="tag-destaque">Mais Vendido (Carro Chefe)</span>
+                    <h4 class="card-title">Acerola Fresca (500g)</h4>
+                    <p>Pacote de 500g. Vermelhinha e selecionada.</p>
+                    <p class="card-price">R$ 6,00 un. <br><span style="font-size:0.9rem; color:#666;">ou 2 por R$ 10,00</span></p>
+                    
+                    <div class="qtd-controls">
+                        <button class="btn-qtd" onclick="alterarQtd('acerola', -1)">-</button>
+                        <span id="qtd-acerola" class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="alterarQtd('acerola', 1)">+</button>
+                    </div>
+                    <p id="subtotal-acerola" class="subtotal">R$ 0,00</p>
+                </div>
+            </article>
+
+            <!-- Morango Congelado (Novo Produto) -->
+            <article class="card">
+                <div class="card-img">
+                    <img src="fotos/pexels-shvets-production-7525101.jpg" alt="Morango Congelado" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Morango Congelado</h4>
+                    <p>Pacote de fruta inteira selecionada.</p>
+                    <p class="card-price">R$ 10,00 un.</p>
+                    <div class="qtd-controls">
+                        <button class="btn-qtd" onclick="alterarQtd('morango', -1)">-</button>
+                        <span id="qtd-morango" class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="alterarQtd('morango', 1)">+</button>
+                    </div>
+                    <p id="subtotal-morango" class="subtotal">R$ 0,00</p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Lista Completa de Sabores (Cardápio) -->
+        <div class="lista-sabores-container">
+            <h3 class="section-title">Polpas de Fruta</h3>
+            <p style="text-align: center; font-weight: bold; color: var(--cor-acerola);">Promoção: R$ 3,00 un. ou 4 por R$ 10,00!</p>
+            
+            <p style="text-align: center; margin-bottom: 1rem;">Clique no sabor para adicionar:</p>
+            
+            <ul class="lista-sabores">
+                <!-- Adicionei dados de preço e cor em cada item -->
+                <li onclick="togglePolpa(this)" data-sabor="Abacaxi">
+                    <img src="fotos/ChatGPT Image 14 de jan. de 2026, 15_13_23.png" alt="Abacaxi" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Abacaxi
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Abacaxi c/ Hortelã">
+                    <img src="fotos/hortelan.png " alt="Abacaxi c/ Hortelã" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Abacaxi c/ Hortelã
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Acerola">
+                    <img src="fotos/acerola.png" alt="Acerola" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Acerola
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Cajá">
+                    <img src="fotos/caja.png" alt="Cajá" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Cajá
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Caju">
+                    <img src="fotos/caju.png" alt="Caju" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Caju
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Cupuaçu">
+                    <img src="fotos/cupuacu.png" alt="Cupuaçu" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Cupuaçu
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Goiaba">
+                    <img src="fotos/goiba.png" alt="Goiaba" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Goiaba
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Graviola">
+                    <img src="fotos/polpa-graviola.jpg" alt="Graviola" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Graviola
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Limão">
+                    <img src="fotos/polpa-limao.jpg" alt="Limão" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Limão
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Manga">
+                    <img src="fotos/polpa-manga.jpg" alt="Manga" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Manga
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Maracujá">
+                    <img src="fotos/polpa-maracuja.jpg" alt="Maracujá" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Maracujá
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Morango">
+                    <img src="fotos/polpa-morango.jpg" alt="Morango" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Morango
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Pitanga">
+                    <img src="fotos/polpa-pitanga.jpg" alt="Pitanga" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Pitanga
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Tamarindo">
+                    <img src="fotos/polpa-tamarindo.jpg" alt="Tamarindo" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Tamarindo
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+                <li onclick="togglePolpa(this)" data-sabor="Uva">
+                    <img src="fotos/polpa-uva.jpg" alt="Uva" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
+                    Uva
+                    <div class="controls-polpa" style="display: none;">
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
+                        <span class="qtd-valor">0</span>
+                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
+                    </div>
+                </li>
+            </ul>
+            <p id="subtotal-polpas" class="subtotal" style="text-align: center; margin-top: 10px;">Total Polpas: 0 un. (R$ 0,00)</p>
+            <p style="text-align: center; font-size: 0.8rem; color: #666; margin-top: 1rem;">*Consulte disponibilidade do dia no WhatsApp.</p>
+        </div>
+
+        <!-- Agenda / Roteiro -->
+        <div class="agenda">
+            <h3 class="section-title agenda-title">Nossas Feiras e Localização</h3>
+            <ul>
+                <li>
+                    <span><strong>Terça-feira:</strong> Feira do Bairro Centro</span>
+                    <span>06h - 12h</span>
+                </li>
+                <li>
+                    <span><strong>Quinta-feira:</strong> Praça da Matriz</span>
+                    <span>07h - 13h</span>
+                </li>
+                <li>
+                    <span><strong>Sábado:</strong> Feirão do Produtor</span>
+                    <span>05h - 14h</span>
+                </li>
+            </ul>
+            <p class="agenda-note">*Sujeito a alterações em dias de chuva forte.</p>
+        </div>
+
+    </div>
+
+    <!-- Barra de Resumo do Pedido -->
+    <div id="resumo-bar" class="resumo-bar">
+        <div>
+            <p style="font-size: 0.8rem; color: #666;">Total do Pedido:</p>
+            <p id="total-geral" style="font-size: 1.3rem; font-weight: bold; color: var(--cor-acerola);">R$ 0,00</p>
+        </div>
+        <a href="#" id="btn-finalizar" class="btn-cta" style="margin:0; padding: 10px 20px; font-size: 1rem;">Finalizar no Zap</a>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Casa da Acerola</h4>
+                <p>Levando saúde e sabor natural para a sua mesa. Produtos selecionados e frescos todos os dias.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Fale Conosco</h4>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+                    <a href="https://wa.me/5511940454474" target="_blank" style="text-decoration: none;">
+                        <img src="fotos/whatsapp.png.png" alt="WhatsApp" class="footer-icon">
+                    </a>
+                    <a href="https://www.instagram.com/casadaacerola/" target="_blank" style="text-decoration: none;">
+                        <img src="fotos/instagram.png.png" alt="Instagram" class="footer-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Casa da Acerola. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para fazer a lista funcionar -->
+    <script>
+        // Estado do Pedido
+        let pedido = {
+            acerola: 0,
+            morango: 0,
+            polpas: {} // Ex: { 'Caju': 2, 'Uva': 1 }
+        };
+
+        // Função para mostrar/esconder os controles da polpa
+        function togglePolpa(li) {
+            // Pega a div de controles dentro do li clicado
+            const controls = li.querySelector('.controls-polpa');
+            const isVisible = controls.style.display === 'flex';
+            
+            // Alterna visibilidade
+            controls.style.display = isVisible ? 'none' : 'flex';
+            
+            // Adiciona classe para destaque visual
+            if (!isVisible) li.classList.add('ativo');
+            else li.classList.remove('ativo');
+        }
+
+        // Função para alterar quantidade da Polpa direto no card
+        function mudarQtdPolpa(btn, mudanca) {
+            event.stopPropagation(); // Impede que o clique feche/abra o card
+            
+            const li = btn.closest('li');
+            const sabor = li.getAttribute('data-sabor');
+            const spanQtd = li.querySelector('.qtd-valor');
+            
+            let qtdAtual = pedido.polpas[sabor] || 0;
+            
+            if (qtdAtual + mudanca >= 0) {
+                pedido.polpas[sabor] = qtdAtual + mudanca;
+                spanQtd.innerText = pedido.polpas[sabor];
+                atualizarTotais();
+            }
+        }
+
+        // Função para alterar quantidade de Acerola ou Morango
+        function alterarQtd(produto, mudanca) {
+            if (pedido[produto] + mudanca >= 0) {
+                pedido[produto] += mudanca;
+                document.getElementById('qtd-' + produto).innerText = pedido[produto];
+                atualizarTotais();
+            }
+        }
+
+        // Lógica de Preços e Atualização da Tela
+        function atualizarTotais() {
+            // 1. Acerola: R$ 6 un ou 2 por R$ 10
+            let paresAcerola = Math.floor(pedido.acerola / 2);
+            let restoAcerola = pedido.acerola % 2;
+            let totalAcerola = (paresAcerola * 10) + (restoAcerola * 6);
+            document.getElementById('subtotal-acerola').innerText = 'Total: R$ ' + totalAcerola.toFixed(2).replace('.', ',');
+
+            // 2. Morango: R$ 10 un
+            let totalMorango = pedido.morango * 10;
+            document.getElementById('subtotal-morango').innerText = 'Total: R$ ' + totalMorango.toFixed(2).replace('.', ',');
+
+            // 3. Polpas: R$ 3 un ou 4 por R$ 10 (Soma todas as polpas)
+            let qtdTotalPolpas = 0;
+            let listaPolpasTexto = "";
+            for (let sabor in pedido.polpas) {
+                if (pedido.polpas[sabor] > 0) {
+                    qtdTotalPolpas += pedido.polpas[sabor];
+                    listaPolpasTexto += `${pedido.polpas[sabor]}x ${sabor}, `;
+                }
+            }
+            let gruposPolpa = Math.floor(qtdTotalPolpas / 4);
+            let restoPolpa = qtdTotalPolpas % 4;
+            let totalPolpas = (gruposPolpa * 10) + (restoPolpa * 3);
+            
+            document.getElementById('subtotal-polpas').innerText = `Total Polpas: ${qtdTotalPolpas} un. (R$ ${totalPolpas.toFixed(2).replace('.', ',')})`;
+
+            // 4. Total Geral
+            let totalGeral = totalAcerola + totalMorango + totalPolpas;
+            document.getElementById('total-geral').innerText = 'R$ ' + totalGeral.toFixed(2).replace('.', ',');
+
+            // 5. Mostrar/Esconder Barra
+            let barra = document.getElementById('resumo-bar');
+            if (totalGeral > 0) barra.classList.add('visible');
+            else barra.classList.remove('visible');
+
+            // 6. Atualizar Link do WhatsApp
+            let msg = `Olá! Gostaria de fazer um pedido:\n`;
+            if (pedido.acerola > 0) msg += `- ${pedido.acerola} pct Acerola (R$ ${totalAcerola})\n`;
+            if (pedido.morango > 0) msg += `- ${pedido.morango} pct Morango (R$ ${totalMorango})\n`;
+            if (qtdTotalPolpas > 0) msg += `- Polpas: ${listaPolpasTexto} (Total: ${qtdTotalPolpas} un - R$ ${totalPolpas})\n`;
+            msg += `\n*Total a pagar: R$ ${totalGeral.toFixed(2)}*`;
+            
+            // ATENÇÃO: Coloque o número do WhatsApp abaixo (Mantenha o 55 e o DDD)
+            document.getElementById('btn-finalizar').href = "https://wa.me/5511940454474?text=" + encodeURIComponent(msg);
+        }
+    </script>
+</body>
+</html>
