@@ -56,6 +56,13 @@ header p { font-size: 0.9rem; opacity: 0.9; }
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
 }
 
+.frete-aviso {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    /* Estilo mais minimalista, sem fundo ou borda, com sombra para legibilidade */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
 .btn-cta {
     background-color: var(--cor-zap);
     color: white;
@@ -97,6 +104,27 @@ header p { font-size: 0.9rem; opacity: 0.9; }
     gap: 2rem;
 }
 
+/* --- Carrossel de Produtos (Novo) --- */
+.produtos-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem; /* Espaço para a sombra do card não cortar */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.produtos-carousel .card {
+    min-width: 280px; /* Largura fixa para os cards no carrossel */
+    flex: 0 0 auto;   /* Garante que não encolham */
+    scroll-snap-align: center; /* Centraliza o card ao soltar */
+}
+
+/* Estilo da barra de rolagem (igual polpas) */
+.produtos-carousel::-webkit-scrollbar { height: 6px; }
+.produtos-carousel::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
+.produtos-carousel::-webkit-scrollbar-track { background-color: #f1f1f1; }
+
 .card {
     background: white;
     border-radius: 10px;
@@ -130,6 +158,11 @@ header p { font-size: 0.9rem; opacity: 0.9; }
 .img-morango { background-color: #ffb6c1; }
 .img-morango-congelado { background-color: #c21e56; color: white; } /* Cor mais forte para diferenciar */
 .img-uva { background-color: #e6e6fa; }
+.img-acerola-cong { background-color: #b22222; color: white; } /* Vermelho escuro */
+.img-amora { background-color: #4b0082; color: white; } /* Roxo escuro */
+.img-framboesa { background-color: #e30b5d; color: white; } /* Rosa escuro */
+.img-frutas-vermelhas { background-color: #800000; color: white; } /* Vinho */
+.img-mirtilo { background-color: #483d8b; color: white; } /* Azul escuro */
 
 .img-text { font-weight: bold; opacity: 0.5; }
 
@@ -208,13 +241,23 @@ header p { font-size: 0.9rem; opacity: 0.9; }
 
 .lista-sabores {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cria colunas automáticas */
-    gap: 10px;
+    display: flex; /* Muda de Grid para Flex (linha) */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    gap: 15px;
     text-align: center;
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não colar */
+    scroll-snap-type: x mandatory; /* Faz o scroll parar certinho no card */
+    -webkit-overflow-scrolling: touch; /* Rolagem suave no iPhone */
 }
 
+/* Estiliza a barra de rolagem para ficar bonita */
+.lista-sabores::-webkit-scrollbar { height: 6px; }
+.lista-sabores::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
+.lista-sabores::-webkit-scrollbar-track { background-color: #f1f1f1; }
+
 .lista-sabores li {
+    flex: 0 0 160px; /* Largura fixa para cada card no carrossel */
+    scroll-snap-align: start; /* Alinha o card ao inicio ao soltar o scroll */
     background-color: #f9f9f9;
     padding: 10px;
     border-radius: 5px;
@@ -256,6 +299,17 @@ header p { font-size: 0.9rem; opacity: 0.9; }
     height: 250px !important; /* Altura expandida quando clica */
 }
 
+/* Títulos das Categorias do Carrossel */
+.titulo-categoria {
+    color: var(--cor-acerola);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    border-left: 4px solid var(--cor-folha);
+    padding-left: 10px;
+    text-align: left;
+}
+
 /* --- Barra de Resumo do Pedido (Fixo Embaixo) --- */
 .resumo-bar {
     position: fixed;
@@ -274,6 +328,20 @@ header p { font-size: 0.9rem; opacity: 0.9; }
     transition: transform 0.3s ease-out;
 }
 .resumo-bar.visible { transform: translateY(0); }
+
+/* Botão Limpar Carrinho */
+.btn-limpar {
+    background: none;
+    border: 1px solid #ccc;
+    color: #666;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+.btn-limpar:hover { background-color: #f0f0f0; color: #333; border-color: #999; }
 
 /* --- Agenda / Onde Encontrar --- */
 .agenda {
@@ -307,6 +375,25 @@ header p { font-size: 0.9rem; opacity: 0.9; }
     font-size: 0.9rem;
 }
 
+/* --- Sobre Nós --- */
+.sobre-nos {
+    margin-top: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.sobre-nos p {
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* --- Rodapé --- */
 footer {
     background-color: #222;
@@ -338,6 +425,18 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.8rem;
     opacity: 0.7;
+}
+
+/* Link do Desenvolvedor (Efeito Neon) */
+.dev-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.dev-link:hover {
+    color: var(--cor-zap);
+    text-shadow: 0 0 10px rgba(37, 211, 102, 0.8);
 }
 
 /* Ícones de Redes Sociais no Rodapé */
@@ -375,4 +474,119 @@ footer {
 @media (max-width: 400px) {
     .hero h2 { font-size: 2rem; }
     .agenda li { flex-direction: column; text-align: center; }
+}
+
+/* --- Toggle Atacado/Varejo --- */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-folha);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute; content: "";
+    height: 20px; width: 20px; left: 4px; bottom: 4px;
+    background-color: white; transition: .4s; border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--cor-acerola); }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* --- Modal de Confirmação --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001; /* Acima de tudo */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h4 {
+    color: var(--cor-acerola);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modal-botoes {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-modal-confirmar, .btn-modal-cancelar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-modal-confirmar {
+    background-color: var(--cor-acerola);
+    color: white;
+}
+.btn-modal-confirmar:hover {
+    background-color: #b82f18;
+}
+
+.btn-modal-cancelar {
+    background-color: #eee;
+    color: #333;
+}
+.btn-modal-cancelar:hover {
+    background-color: #ddd;
 }
