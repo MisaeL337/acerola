@@ -39,7 +39,7 @@ header p { font-size: 0.9rem; opacity: 0.9; }
 .hero {
     /* Fundo com gradiente escuro para ler o texto e imagem de fundo */
     /* ↓↓↓ ESPAÇO PARA A FOTO DE FUNDO: Mude o nome do arquivo aqui dentro ↓↓↓ */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../fotos/red-3929193_640.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/djtguoi8i/image/upload/red-3929193_640_erlzeh.png');
     background-size: cover;
     background-position: center;
     color: white;
