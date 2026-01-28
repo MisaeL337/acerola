@@ -1,918 +1,220 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa da Acerola</title>
-    
-    <!-- Favicon (Ícone da aba do navegador) -->
-    <link rel="icon" href="https://res.cloudinary.com/djtguoi8i/image/upload/logo2_xu3ii5.png" type="image/png">
-    
-    <!-- Conexão com o arquivo CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfólio profissional de Misael Lopes, Desenvolvedor Web e Analista de Sistemas. Criação de sites, landing pages e soluções digitais.">
+  <title>Kadosh Tech</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <link rel="shortcut icon" href="img/favico.png" type="image/x-icon">
 </head>
 <body>
+  <header class="main-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <h2>Kadosh Tech</h2>
+      </div>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#portfolio">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Cabeçalho -->
-    <header>
-        <h1>Casa da Acerola</h1>
-        <p>Ser saudável é uma escolha</p>
-    </header>
+  <!-- Home -->
+  <section id="home" class="section-home">
+    <div class="container home-grid">
+      <div class="home-text">
+        <span class="tagline">Pronto para inovar</span>
+        <h1 class="gsap-hero-text">Desenvolvedor Web &<br>Analista de Sistemas</h1>
+        <p class="sub">Análise e Desenvolvimento de Sistemas</p>
+        <p class="desc gsap-hero-text">
+          Criando sites inovadores, funcionais e amigáveis para soluções digitais.
+        </p>
 
-    <!-- Hero Section (Capa) -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>A Acerola mais doce da região!</h2>
-            <p>Frutas frescas selecionadas e polpas 100% naturais.</p>
-            <p class="frete-aviso" id="aviso-frete-hero" style="display: none;">🚚 <strong>Frete Grátis para SBC</strong> acima de 7kg (Atacado)!</p>
+        <div class="buttons gsap-hero-text">
+          <a href="#portfolio" class="btn primary">Ver Projetos</a>
+          <a href="#contato" class="btn secondary">Fale Comigo</a>
         </div>
-    </section>
 
+        <div class="social-icons gsap-hero-text">
+          <a href="https://github.com/MisaeL337" target="_blank"><img src="img/github.png" alt="GitHub" /></a>
+          <a href="https://www.instagram.com/misael.mens/" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+          <a href="https://wa.me/5511943719478?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20e%20solicitar%20um%20or%C3%A7amento." target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+          <a href="https://www.linkedin.com/in/misael-lopes-655716260/" target="_blank" title="LinkedIn"><img src="img/invision.png" alt="LinkedIn" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services (Antigo About) -->
+  <section id="services" class="about-section">
     <div class="container">
+      <div class="about-grid">
+        <div class="about-text gsap-fade-up">
+          <h2 class="section-title">Meus Serviços</h2>
+          <p class="section-subtitle">Soluções digitais de alta qualidade para o seu negócio</p>
+          
+          <div class="services-grid">
+            <!-- Serviço 1 -->
+            <div class="service-card">
+              <h3>🌐 Sites Personalizados</h3>
+              <p>Desenvolvimento de sites profissionais, portfólios e landing pages sob medida para a identidade e objetivos da sua marca.</p>
+            </div>
+
+            <!-- Serviço 2 -->
+            <div class="service-card">
+              <h3>📱 Design Responsivo</h3>
+              <p>Criação de layouts que se adaptam perfeitamente a qualquer dispositivo, garantindo uma ótima experiência no celular, tablet e desktop.</p>
+            </div>
+
+            <!-- Serviço 3 -->
+            <div class="service-card">
+              <h3>⚡ Performance & SEO</h3>
+              <p>Otimização para velocidade e motores de busca para garantir que seu site ranqueie bem, carregue instantaneamente e converta visitantes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <h2 class="section-title gsap-fade-up">Trabalhos Selecionados</h2>
+      <p class="section-subtitle gsap-fade-up">Uma seleção dos meus projetos mais recentes</p>
+
+      <div class="portfolio-wrapper gsap-fade-up">
+        <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
         
-        <!-- Seção de Produtos -->
-        <div class="section-header">
-            <h3 class="section-title">Nossos Produtos</h3>
-            
-            <!-- Opção Atacado / Varejo -->
-            <div class="switch-container">
-                <span>Varejo</span>
-                <label class="switch">
-                    <input type="checkbox" id="check-atacado" onchange="toggleModo()">
-                    <span class="slider"></span>
-                </label>
-                <span>Atacado</span>
-            </div>
-        </div>
-
-        <div class="produtos-grid">
-            
-            <!-- O CARRO CHEFE -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/acerolacongelada_piqqjj.png" alt="Acerola Congelada" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="portfolio-track-container">
+          <div class="portfolio-track" id="track">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <a href="https://misael337.github.io/GrowUp/" target="_blank">
+                <img src="img/grow up fundo.jpg" alt="GrowUp Project" />
+                <div class="project-info">
+                  <h4>GrowUp</h4>
+                  <span>Ver Projeto &rarr;</span>
                 </div>
-                <div class="card-body">
-                    <span class="tag-destaque">Mais Vendido (Carro Chefe)</span>
-                    <h4 class="card-title" id="titulo-acerola">Acerola Congelada (300g)</h4> <!-- Varejo padrão -->
-                    <p id="desc-acerola">Pacote de 300g. Vermelhinha e selecionada.</p> <!-- Varejo padrão -->
-                    <p class="card-price" id="preco-acerola-display">R$ 6,00 un. <br><span style="font-size:0.9rem; color:#666;">ou 2 por R$ 10,00</span></p>
-                    
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('acerola', -1)">-</button>
-                        <span id="qtd-acerola" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('acerola', 1)">+</button>
-                    </div>
-                    <p id="subtotal-acerola" class="subtotal">R$ 0,00</p>
-                </div>
+              </a>
             </article>
 
-            <!-- Morango Congelado (Novo Produto) -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/morangocongelado_paa6sv.png" alt="Morango Congelado" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Project 2 -->
+            <article class="project-card">
+              <a href="https://misael337.github.io/acerola/" target="_blank">
+                <img src="img/logoofc.jpg" alt="Projeto Acerola" />
+                <div class="project-info">
+                  <h4>Casa da Acerola</h4>
+                  <span>Ver Projeto &rarr;</span>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">Morango Congelado (450g)</h4>
-                    <p id="desc-morango">Pacote de fruta inteira selecionada.</p> <!-- Varejo padrão (500g) -->
-                    <p class="card-price" id="preco-morango-display">R$ 10,00 un.</p>
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('morango', -1)">-</button>
-                        <span id="qtd-morango" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('morango', 1)">+</button>
-                    </div>
-                    <p id="subtotal-morango" class="subtotal">R$ 0,00</p>
-                </div>
+              </a>
             </article>
 
-        </div>
-
-        <!-- Nova Seção: Frutas Congeladas (1kg) -->
-        <div id="secao-congelados" style="display: none;">
-        <div class="section-header" style="margin-top: 3rem;">
-            <h3 class="section-title">Frutas Congeladas (Pacotes de 1kg)</h3>
-            <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">Ideais para sucos, geleias e receitas.</p>
-        </div>
-
-        <div class="produtos-carousel">
-            
-            <!-- Acerola Congelada -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/acerolacongelada_piqqjj.png" alt="Acerola Congelada" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Project 3 -->
+            <article class="project-card">
+              <a href="https://misael337.github.io/Ruah2/" target="_blank">
+                <img src="img/chat.img.png" alt="Ruah Project" />
+                <div class="project-info">
+                  <h4>Ruah</h4>
+                  <span>Ver Projeto &rarr;</span>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">Acerola Congelada</h4>
-                    <p>Pacote de 1kg.</p>
-                    <p class="card-price">R$ 14,00 /kg</p>
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('acerola_cong', -1)">-</button>
-                        <span id="qtd-acerola_cong" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('acerola_cong', 1)">+</button>
-                    </div>
-                    <p id="subtotal-acerola_cong" class="subtotal">R$ 0,00</p>
-                </div>
+              </a>
             </article>
 
-            <!-- Amora -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/amorascongeladas2_svah7w.png" alt="Amora" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Project 4 -->
+            <article class="project-card">
+              <a href="https://misael337.github.io/Fe-Estilo/" target="_blank">
+                <img src="img/Design sem nome (2).png" alt="Fe Estilo Project" />
+                <div class="project-info">
+                  <h4>Fé & Estilo</h4>
+                  <span>Ver Projeto &rarr;</span>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">Amora</h4>
-                    <p>Pacote de 1kg.</p>
-                    <p class="card-price">R$ 32,00 /kg</p>
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('amora', -1)">-</button>
-                        <span id="qtd-amora" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('amora', 1)">+</button>
-                    </div>
-                    <p id="subtotal-amora" class="subtotal">R$ 0,00</p>
-                </div>
+              </a>
             </article>
 
-            <!-- Framboesa -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/framboesacongelada_woqqjg.png" alt="Framboesa" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Project 5 -->
+            <article class="project-card">
+              <a href="https://misael337.github.io/Barbearia-Shop/" target="_blank">
+                <img src="img/ChatGPT Image 27 de set. de 2025, 14_48_40.png" alt="Barbearia Shop" />
+                <div class="project-info">
+                  <h4>Barbearia Shop</h4>
+                  <span>Ver Projeto &rarr;</span>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">Framboesa</h4>
-                    <p>Pacote de 1kg.</p>
-                    <p class="card-price">R$ 47,00 /kg</p>
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('framboesa', -1)">-</button>
-                        <span id="qtd-framboesa" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('framboesa', 1)">+</button>
-                    </div>
-                    <p id="subtotal-framboesa" class="subtotal">R$ 0,00</p>
-                </div>
+              </a>
             </article>
-
-            <!-- Frutas Vermelhas -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/frutavermelhascongeladas_mvz3ka.png" alt="Frutas Vermelhas" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Frutas Vermelhas</h4>
-                    <p>Pacote de 1kg (Mix).</p>
-                    <p class="card-price">R$ 32,00 /kg</p>
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('frutas_vermelhas', -1)">-</button>
-                        <span id="qtd-frutas_vermelhas" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('frutas_vermelhas', 1)">+</button>
-                    </div>
-                    <p id="subtotal-frutas_vermelhas" class="subtotal">R$ 0,00</p>
-                </div>
-            </article>
-
-            <!-- Mirtilo -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/mirtilocongelado_n2nxkh.png" alt="Mirtilo" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Mirtilo</h4>
-                    <p>Pacote de 1kg.</p>
-                    <p class="card-price">R$ 32,00 /kg</p>
-                    <div class="qtd-controls">
-                        <button class="btn-qtd" onclick="alterarQtd('mirtilo', -1)">-</button>
-                        <span id="qtd-mirtilo" class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="alterarQtd('mirtilo', 1)">+</button>
-                    </div>
-                    <p id="subtotal-mirtilo" class="subtotal">R$ 0,00</p>
-                </div>
-            </article>
-
-        </div>
+          </div>
         </div>
 
-        <!-- Lista Completa de Sabores (Cardápio) -->
-        <div class="lista-sabores-container">
-            <h3 class="section-title" id="titulo-polpas">Polpas de Fruta (100g)</h3> <!-- Varejo padrão -->
-            <p id="texto-promo-polpa" style="text-align: center; font-weight: bold; color: var(--cor-acerola);">Promoção: R$ 3,00 un. ou 4 por R$ 10,00!</p>
-            
-            <p style="text-align: center; margin-bottom: 1rem;">Clique no sabor para adicionar:</p>
-            
-            <!-- CARROSSEL 1: Sabores A - G -->
-            <h4 class="titulo-categoria">Sabores A - G</h4>
-            <ul class="lista-sabores">
-                <li onclick="togglePolpa(this)" data-sabor="Abacate">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/abacate_fldrt8.png" alt="Abacate" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Abacate
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Abacaxi">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/abacaxi_rcoi5e.png" alt="Abacaxi" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Abacaxi
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Abacaxi c/ Hortelã">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/hortelan_ykworg.png" alt="Abacaxi c/ Hortelã" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Abacaxi c/ Hortelã
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Açaí">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/accai_sjt8xq.png" alt="Açaí" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Açaí
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Açaí c/ Guaraná">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/acaiguarana_2_wlrk2s.png" alt="Açaí c/ Guaraná" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Açaí c/ Guaraná
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Acerola">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/acerola_gihmcr.png" alt="Acerola" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Acerola
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Acerola c/ Laranja">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/acerolalaranja_kcq0l6.png" alt="Acerola c/ Laranja" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Acerola c/ Laranja
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Amora">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/amora_qiepv2.png" alt="Amora" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Amora
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Cajá">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/caja_axozv4.png" alt="Cajá" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Cajá
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Caju">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/caju_nijwqn.png" alt="Caju" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Caju
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Coco">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/coco_ctotpw.png" alt="Coco" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Coco
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Cupuaçu">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/cupuacu_odmmcx.png" alt="Cupuaçu" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Cupuaçu
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Detox (Laranja, Gengibre e Chia)">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/detox_d0yxoe.png" alt="Detox" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Detox
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Framboesa">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/framboesa_javwxi.png" alt="Framboesa" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Framboesa
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Frutas Vermelhas">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/frutasvermelhas_ul8lx0.png" alt="Frutas Vermelhas" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Frutas Vermelhas
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Goiaba">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/goiba_fhbzva.png" alt="Goiaba" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Goiaba
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Graviola">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/graviola_cc6c8m.png" alt="Graviola" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Graviola
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-            </ul>
-
-            <!-- CARROSSEL 2: Sabores L - Z -->
-            <h4 class="titulo-categoria">Sabores L - Z</h4>
-            <ul class="lista-sabores">
-                <li onclick="togglePolpa(this)" data-sabor="Laranja">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/laranja_mn8vjl.png" alt="Laranja" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Laranja
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Limão">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/limao_pcctkp.png" alt="Limão" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Limão
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Mamão">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/mamao_fo5xrj.png" alt="Mamão" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Mamão
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Mamão c/ Laranja">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/mamaocomlaranja_dpgj7r.png" alt="Mamão c/ Laranja" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Mamão c/ Laranja
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Manga">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/manga_m9kbet.png" alt="Manga" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Manga
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Maracujá">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/maracuja_iesumk.png" alt="Maracujá" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Maracujá
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Melancia">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/melancia_zryahh.png" alt="Melancia" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Melancia
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Melão">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/melao_fls96t.png" alt="Melão" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Melão
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Morango">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/morango_g31hcc.png" alt="Morango" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Morango
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Pêssego">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/pessego_pqingo.png" alt="Pêssego" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Pêssego
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Tangerina">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/tangerina_zptati.png" alt="Tangerina" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Tangerina
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Uva">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/uva_zt2wxn.png" alt="Uva" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Uva
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-                <li onclick="togglePolpa(this)" data-sabor="Vitamina (Banana, Maçã, Mamão e Abacate)">
-                    <img src="https://res.cloudinary.com/djtguoi8i/image/upload/vitamina_me78ok.png" alt="Vitamina" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;">
-                    Vitamina
-                    <div class="controls-polpa" style="display: none;">
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, -1)">-</button>
-                        <span class="qtd-valor">0</span>
-                        <button class="btn-qtd" onclick="mudarQtdPolpa(this, 1)">+</button>
-                    </div>
-                </li>
-            </ul>
-            <p id="subtotal-polpas" class="subtotal" style="text-align: center; margin-top: 10px;">Total Polpas: 0 un. (R$ 0,00)</p>
-            <p style="text-align: center; font-size: 0.8rem; color: #666; margin-top: 1rem;">*Consulte disponibilidade do dia no WhatsApp.</p>
-        </div>
-
-        <!-- Agenda / Roteiro -->
-        <div class="agenda">
-            <h3 class="section-title agenda-title">Nossas Feiras e Localização</h3>
-            <ul>
-                <li>
-                    <span><strong>Terça-feira:</strong> Feira do Bairro Centro</span>
-                    <span>06h - 12h</span>
-                </li>
-                <li>
-                    <span><strong>Quinta-feira:</strong> Praça da Matriz</span>
-                    <span>07h - 13h</span>
-                </li>
-                <li>
-                    <span><strong>Sábado:</strong> Feirão do Produtor</span>
-                    <span>05h - 14h</span>
-                </li>
-            </ul>
-            <p class="agenda-note">*Sujeito a alterações em dias de chuva forte.</p>
-        </div>
-
-        <!-- Sobre Nós -->
-        <div class="sobre-nos">
-            <h3 class="section-title">Sobre Nós</h3>
-            <p>A <strong>Casa da Acerola</strong> nasceu da paixão por frutas frescas e vida saudável. Começamos com o cultivo cuidadoso de acerolas e expandimos para oferecer uma variedade incrível de polpas 100% naturais.</p>
-            <p>Nosso compromisso é levar do campo para a sua mesa produtos selecionados, sem conservantes e com o verdadeiro sabor da fruta. Seja para o seu suco diário ou para o seu negócio, garantimos qualidade e preço justo.</p>
-        </div>
-
+        <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+      </div>
     </div>
+  </section>
 
-    <!-- Barra de Resumo do Pedido -->
-    <div id="resumo-bar" class="resumo-bar">
-        <div>
-            <p style="font-size: 0.8rem; color: #666;">Total do Pedido (<span id="peso-total">0.0</span>kg):</p>
-            <p id="total-geral" style="font-size: 1.3rem; font-weight: bold; color: var(--cor-acerola);">R$ 0,00</p>
-            <p id="msg-frete" style="font-size: 0.8rem; color: #666; font-weight: bold;">Frete Grátis SBC > 7kg</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-            <button onclick="limparCarrinho()" class="btn-limpar" title="Esvaziar Carrinho">🗑️ Limpar</button>
-            <a href="#" id="btn-finalizar" class="btn-cta" style="margin:0; padding: 10px 20px; font-size: 1rem;">Finalizar no Zap</a>
-        </div>
+  <!-- Contato -->
+  <section id="contato" class="contact-section">
+    <div class="container">
+      <div class="contact-cta gsap-fade-up">
+        <h2 class="section-title">Pronto para iniciar seu projeto?</h2>
+        <p class="section-subtitle">Vamos transformar suas ideias em realidade. Entre em contato diretamente para um orçamento.</p>
+        
+        <a href="https://wa.me/5511943719478?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20e%20solicitar%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp">
+          <img src="img/whatsapp.png" alt="WhatsApp" />
+          Iniciar Conversa
+        </a>
+      </div>
     </div>
+  </section>
 
-    <!-- Modal de Confirmação -->
-    <div id="modal-confirmacao" class="modal-overlay">
-        <div class="modal-content">
-            <h4>Confirmar Ação</h4>
-            <p>Deseja realmente remover todos os itens do seu pedido?</p>
-            <div class="modal-botoes">
-                <button id="btn-modal-nao" class="btn-modal-cancelar">Não, voltar</button>
-                <button id="btn-modal-sim" class="btn-modal-confirmar">Sim, limpar</button>
-            </div>
-        </div>
-    </div>
+  <footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border);">
+    <p>&copy; 2025 Dev Misael. Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Casa da Acerola</h4>
-                <p>Levando saúde e sabor natural para a sua mesa. Produtos selecionados e frescos todos os dias.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Fale Conosco</h4>
-                <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-                    <a href="https://wa.me/5511940454474" target="_blank" style="text-decoration: none;">
-                        <img src="https://res.cloudinary.com/djtguoi8i/image/upload/whatsapp.png_gnasnf.png" alt="WhatsApp" class="footer-icon">
-                    </a>
-                    <a href="https://www.instagram.com/casadaacerola/" target="_blank" style="text-decoration: none;">
-                        <img src="https://res.cloudinary.com/djtguoi8i/image/upload/instagram.png_rzuyua.png" alt="Instagram" class="footer-icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copy">
-            <p>&copy; 2024 Casa da Acerola. <span style="margin: 0 5px; opacity: 0.5;">|</span> <a href="https://misael337.github.io/site-profissional/" target="_blank" class="dev-link">Misael dev</a></p>
-        </div>
-    </footer>
+  <script>
+    // New Professional Animations
+    gsap.registerPlugin(ScrollTrigger);
 
-    <!-- Script para fazer a lista funcionar -->
-    <script>
-        // --- CONFIGURAÇÃO DE PREÇOS E PESOS ---
-        const PRECOS = {
-            varejo: {
-                acerola: 6.00,
-                acerola_promo: { qtd: 2, preco: 10.00 }, // 2 por 10
-                morango: 10.00,
-                polpa: 3.00,
-                polpa_promo: { qtd: 4, preco: 10.00 }    // 4 por 10
-            },
-            congelados: {
-                // Preços fixos por Kg
-                acerola_cong: 14.00,
-                amora: 32.00,
-                framboesa: 47.00,
-                frutas_vermelhas: 32.00,
-                mirtilo: 32.00
-            },
-            atacado: {
-                // Frutas Congeladas (Cards) - Preço por unidade (1kg no atacado)
-                acerola: 17.00, // R$ 17,00/kg * 1kg
-                morango: 16.00, // R$ 16,00/kg * 1kg
-                
-                // Polpas (1kg no atacado) - Preço unitário calculado (Preço kg * 1)
-                polpas_padrao: 20.00, // Fallback para sabores não listados (R$ 20/kg)
-                polpas: {
-                    "Abacate": 20.00,            // 20.00/kg
-                    "Abacaxi": 20.00,            // 20.00/kg
-                    "Abacaxi c/ Hortelã": 20.00, // 20.00/kg
-                    "Açaí": 22.00,               // 22.00/kg
-                    "Açaí c/ Guaraná": 22.00,    // 22.00/kg
-                    "Acerola": 17.00,            // 17.00/kg
-                    "Acerola c/ Laranja": 17.00, // 17.00/kg
-                    "Amora": 32.00,              // 32.00/kg
-                    "Cajá": 22.00,               // 22.00/kg
-                    "Caju": 20.00,               // 20.00/kg
-                    "Coco": 22.00,               // 22.00/kg
-                    "Cupuaçu": 22.00,            // 22.00/kg
-                    "Detox (Laranja, Gengibre e Chia)": 24.00, // 24.00/kg
-                    "Framboesa": 47.00,          // 47.00/kg
-                    "Frutas Vermelhas": 32.00,   // 32.00/kg
-                    "Goiaba": 17.00,             // 17.00/kg
-                    "Graviola": 22.00,           // 22.00/kg
-                    "Laranja": 17.00,            // 17.00/kg
-                    "Limão": 17.00,              // 17.00/kg
-                    "Mamão": 17.00,              // 17.00/kg
-                    "Mamão c/ Laranja": 17.00,   // 17.00/kg
-                    "Manga": 17.00,              // 17.00/kg
-                    "Maracujá": 27.00,           // 27.00/kg
-                    "Melancia": 17.00,           // 17.00/kg
-                    "Melão": 20.00,              // 20.00/kg
-                    "Morango": 20.00,            // 20.00/kg (Polpa)
-                    "Pêssego": 20.00,            // 20.00/kg
-                    "Tangerina": 17.00,          // 17.00/kg
-                    "Uva": 20.00,                // 20.00/kg
-                    "Vitamina (Banana, Maçã, Mamão e Abacate)": 22.00 // 22.00/kg
-                }
-            }
-        };
+    // Hero Animations
+    gsap.from(".gsap-hero-text", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+    
+    gsap.from(".gsap-hero-img", {
+      x: 30,
+      opacity: 0,
+      duration: 1.2,
+      delay: 0.5,
+      ease: "power3.out"
+    });
 
-        // Pesos base para Varejo. Atacado será 1kg para todos.
-        const PESOS_VAREJO = {
-            acerola: 0.3, // 300g
-            morango: 0.45, // 450g
-            polpa: 0.1    // 100g
-        };
-
-        const LIMITE_FRETE_GRATIS = 7.0; // kg
-
-        // Estado da Aplicação
-        let modoAtacado = false;
-
-        // Estado do Pedido
-        let pedido = {
-            acerola: 0,
-            morango: 0,
-            polpas: {}, // Ex: { 'Caju': 2, 'Uva': 1 }
-            acerola_cong: 0,
-            amora: 0,
-            framboesa: 0,
-            frutas_vermelhas: 0,
-            mirtilo: 0
-        };
-
-        // Função para alternar entre Varejo e Atacado
-        function toggleModo() {
-            modoAtacado = document.getElementById('check-atacado').checked;
-            
-            // Mostra ou esconde o aviso de frete na capa
-            document.getElementById('aviso-frete-hero').style.display = modoAtacado ? 'block' : 'none';
-
-            // Mostra ou esconde a seção de Frutas Congeladas (Só Atacado)
-            document.getElementById('secao-congelados').style.display = modoAtacado ? 'block' : 'none';
-
-            // Atualiza visualmente os preços nos cards
-            if (modoAtacado) {
-                document.getElementById('preco-acerola-display').innerHTML = `R$ ${PRECOS.atacado.acerola.toFixed(2).replace('.',',')} un. <br><span style="font-size:0.9rem; color:#666;">Preço de Atacado</span>`;
-                document.getElementById('preco-morango-display').innerText = `R$ ${PRECOS.atacado.morango.toFixed(2).replace('.',',')} un. (Atacado)`; // Morango 1kg
-                document.getElementById('texto-promo-polpa').innerText = `Preços de Atacado (Variável por sabor)`;
-                
-                // Atualiza textos de peso (Atacado = 1kg para todos)
-                document.getElementById('titulo-acerola').innerText = "Acerola Congelada (1kg)";
-                document.getElementById('desc-acerola').innerText = "Pacote de 1kg. Vermelhinha e selecionada.";
-                document.querySelector('.card:nth-child(2) .card-title').innerText = "Morango Congelado (1kg)"; // Morango
-                document.getElementById('desc-morango').innerText = "Pacote de 1kg de fruta inteira selecionada.";
-                document.getElementById('titulo-polpas').innerText = "Polpas de Fruta (1kg)"; // Polpas
-
-            } else {
-                // Volta para os textos originais de Varejo
-                document.getElementById('preco-acerola-display').innerHTML = `R$ ${PRECOS.varejo.acerola.toFixed(2).replace('.',',')} un. <br><span style="font-size:0.9rem; color:#666;">ou 2 por R$ 10,00</span>`;
-                document.getElementById('preco-morango-display').innerText = `R$ ${PRECOS.varejo.morango.toFixed(2).replace('.',',')} un.`;
-                document.getElementById('texto-promo-polpa').innerText = `Promoção: R$ 3,00 un. ou 4 por R$ 10,00!`;
-
-                // Volta textos de peso (Varejo: Acerola 300g, Morango 500g, Polpas 100g)
-                document.getElementById('titulo-acerola').innerText = "Acerola Congelada (300g)";
-                document.getElementById('desc-acerola').innerText = "Pacote de 300g. Vermelhinha e selecionada.";
-                document.querySelector('.card:nth-child(2) .card-title').innerText = "Morango Congelado (450g)"; // Morango
-                document.getElementById('desc-morango').innerText = "Pacote de fruta inteira selecionada."; // Morango (450g)
-                document.getElementById('titulo-polpas').innerText = "Polpas de Fruta (100g)"; // Polpas
-
-            }
-
-            // Recalcula totais com os novos preços
-            atualizarTotais();
-        }
-
-        // Função para mostrar/esconder os controles da polpa
-        function togglePolpa(li) {
-            // Pega a div de controles dentro do li clicado
-            const controls = li.querySelector('.controls-polpa');
-            const isVisible = controls.style.display === 'flex';
-            
-            // Alterna visibilidade
-            controls.style.display = isVisible ? 'none' : 'flex';
-            
-            // Adiciona classe para destaque visual
-            if (!isVisible) li.classList.add('ativo');
-            else li.classList.remove('ativo');
-        }
-
-        // Função para alterar quantidade da Polpa direto no card
-        function mudarQtdPolpa(btn, mudanca) {
-            event.stopPropagation(); // Impede que o clique feche/abra o card
-            
-            const li = btn.closest('li');
-            const sabor = li.getAttribute('data-sabor');
-            const spanQtd = li.querySelector('.qtd-valor');
-            
-            let qtdAtual = pedido.polpas[sabor] || 0;
-            
-            if (qtdAtual + mudanca >= 0) {
-                pedido.polpas[sabor] = qtdAtual + mudanca;
-                spanQtd.innerText = pedido.polpas[sabor];
-                atualizarTotais();
-            }
-        }
-
-        // Função para Limpar o Carrinho
-        function limparCarrinho() {
-            // Em vez de um alerta, abre o modal de confirmação
-            document.getElementById('modal-confirmacao').classList.add('visible');
-        }
-
-        // Função para alterar quantidade de Acerola ou Morango
-        function alterarQtd(produto, mudanca) {
-            if (pedido[produto] + mudanca >= 0) {
-                pedido[produto] += mudanca;
-                document.getElementById('qtd-' + produto).innerText = pedido[produto];
-                atualizarTotais();
-            }
-        }
-
-        // Lógica de Preços e Atualização da Tela
-        function atualizarTotais() {
-            let totalAcerola = 0;
-            let totalMorango = 0;
-            let totalPolpas = 0;
-            let totalCongelados = 0;
-            
-            // Lista de novos congelados para iterar
-            const listaCongelados = ['acerola_cong', 'amora', 'framboesa', 'frutas_vermelhas', 'mirtilo'];
-            let pesoCongelados = 0;
-            let textoCongelados = "";
-
-            // 1. Acerola
-            if (modoAtacado) {
-                totalAcerola = pedido.acerola * PRECOS.atacado.acerola;
-            } else {
-                // Lógica Varejo (2 por 10)
-                let pares = Math.floor(pedido.acerola / 2);
-                let resto = pedido.acerola % 2;
-                totalAcerola = (pares * PRECOS.varejo.acerola_promo.preco) + (resto * PRECOS.varejo.acerola);
-            }
-            document.getElementById('subtotal-acerola').innerText = 'Total: R$ ' + totalAcerola.toFixed(2).replace('.', ',');
-
-            // 2. Morango
-            let precoMorango = modoAtacado ? PRECOS.atacado.morango : PRECOS.varejo.morango;
-            totalMorango = pedido.morango * precoMorango;
-            document.getElementById('subtotal-morango').innerText = 'Total: R$ ' + totalMorango.toFixed(2).replace('.', ',');
-
-            // 3. Polpas
-            let qtdTotalPolpas = 0;
-            let listaPolpasTexto = "";
-            for (let sabor in pedido.polpas) {
-                if (pedido.polpas[sabor] > 0) {
-                    qtdTotalPolpas += pedido.polpas[sabor];
-                    
-                    // No atacado, precisamos ver o preço de cada sabor individualmente
-                    if (modoAtacado) {
-                        let precoUnitario = PRECOS.atacado.polpas[sabor] || PRECOS.atacado.polpas_padrao;
-                        listaPolpasTexto += `${pedido.polpas[sabor]}x ${sabor} (R$ ${precoUnitario.toFixed(2).replace('.',',')}), `;
-                    } else {
-                        listaPolpasTexto += `${pedido.polpas[sabor]}x ${sabor}, `; 
-                    }
-                }
-            }
-
-            if (modoAtacado) {
-                // Soma o preço individual de cada polpa selecionada
-                for (let sabor in pedido.polpas) {
-                    let qtd = pedido.polpas[sabor];
-                    if (qtd > 0) {
-                        let preco = PRECOS.atacado.polpas[sabor] || PRECOS.atacado.polpas_padrao;
-                        totalPolpas += qtd * preco;
-                    }
-                }
-            } else {
-                // Lógica Varejo (4 por 10)
-                let grupos = Math.floor(qtdTotalPolpas / 4);
-                let resto = qtdTotalPolpas % 4;
-                totalPolpas = (grupos * PRECOS.varejo.polpa_promo.preco) + (resto * PRECOS.varejo.polpa);
-            }
-            document.getElementById('subtotal-polpas').innerText = `Total Polpas: ${qtdTotalPolpas} un. (R$ ${totalPolpas.toFixed(2).replace('.', ',')})`;
-
-            // 4. Novos Congelados (1kg)
-            if (modoAtacado) {
-                listaCongelados.forEach(item => {
-                    let qtd = pedido[item];
-                    if (qtd > 0) {
-                        let sub = qtd * PRECOS.congelados[item];
-                        totalCongelados += sub;
-                        pesoCongelados += qtd * 1.0; // Cada pacote tem 1kg
-                        document.getElementById('subtotal-' + item).innerText = 'Total: R$ ' + sub.toFixed(2).replace('.', ',');
-                        
-                        // Formata nome para o Zap (remove _ e capitaliza)
-                        let nomeBonito = item.replace('_', ' ').replace('cong', '(Congelada)').toUpperCase();
-                        textoCongelados += `- ${qtd}kg ${nomeBonito} (R$ ${sub.toFixed(2)})\n`;
-                    } else {
-                        document.getElementById('subtotal-' + item).innerText = 'R$ 0,00';
-                    }
-                });
-            }
-
-            // 5. Total Geral
-            let totalGeral = totalAcerola + totalMorango + totalPolpas + totalCongelados;
-            document.getElementById('total-geral').innerText = 'R$ ' + totalGeral.toFixed(2).replace('.', ',');
-
-            // 6. Peso e Frete
-            // Define o peso da acerola dinamicamente (0.5kg Atacado / 0.3kg Varejo)
-            let pesoAcerola = modoAtacado ? 1.0 : PESOS_VAREJO.acerola;
-            let pesoMorango = modoAtacado ? 1.0 : PESOS_VAREJO.morango;
-            let pesoPolpa = modoAtacado ? 1.0 : PESOS_VAREJO.polpa;
-            let pesoTotal = (pedido.acerola * pesoAcerola) +
-                            (pedido.morango * pesoMorango) +
-                            (qtdTotalPolpas * pesoPolpa) +
-                            pesoCongelados;
-            
-            document.getElementById('peso-total').innerText = pesoTotal.toFixed(1).replace('.', ',');
-            
-            let msgFrete = document.getElementById('msg-frete');
-            let textoFreteZap = "";
-            
-            // Lógica de Frete Grátis (Só aparece no Atacado)
-            if (modoAtacado) {
-                msgFrete.style.display = 'block';
-                if (pesoTotal >= LIMITE_FRETE_GRATIS) {
-                    msgFrete.innerText = "Frete Grátis para SBC!";
-                    msgFrete.style.color = "var(--cor-zap)";
-                    textoFreteZap = " (Frete Grátis SBC)";
-                } else {
-                    let falta = LIMITE_FRETE_GRATIS - pesoTotal;
-                    msgFrete.innerText = `Falta ${falta.toFixed(1)}kg para Frete Grátis (SBC)`;
-                    msgFrete.style.color = "#666";
-                }
-            } else {
-                msgFrete.style.display = 'none';
-            }
-
-            // 7. Mostrar/Esconder Barra
-            let barra = document.getElementById('resumo-bar');
-            if (totalGeral > 0) barra.classList.add('visible');
-            else barra.classList.remove('visible');
-
-            // 8. Atualizar Link do WhatsApp
-            let tipoPedido = modoAtacado ? "[ATACADO]" : "[VAREJO]";
-            let msg = `Olá! Gostaria de fazer um pedido ${tipoPedido}:\n`;
-            
-            if (pedido.acerola > 0) msg += `- ${pedido.acerola} pct Acerola (R$ ${totalAcerola})\n`;
-            if (pedido.morango > 0) msg += `- ${pedido.morango} pct Morango (R$ ${totalMorango})\n`;
-            if (textoCongelados !== "") msg += textoCongelados;
-            if (qtdTotalPolpas > 0) msg += `- Polpas: ${listaPolpasTexto} (Total: ${qtdTotalPolpas} un - R$ ${totalPolpas})\n`;
-            
-            msg += `\n*Total a pagar: R$ ${totalGeral.toFixed(2)}*`;
-            msg += `\nPeso aprox: ${pesoTotal.toFixed(1)}kg ${textoFreteZap}`;
-            
-            // ATENÇÃO: Coloque o número do WhatsApp abaixo (Mantenha o 55 e o DDD)
-            document.getElementById('btn-finalizar').href = "https://wa.me/5511940454474?text=" + encodeURIComponent(msg);
-        }
-
-        // --- LÓGICA DO MODAL DE CONFIRMAÇÃO ---
-        const modal = document.getElementById('modal-confirmacao');
-        const btnModalSim = document.getElementById('btn-modal-sim');
-        const btnModalNao = document.getElementById('btn-modal-nao');
-
-        function fecharModal() {
-            modal.classList.remove('visible');
-        }
-
-        btnModalNao.addEventListener('click', fecharModal);
-        modal.addEventListener('click', (e) => { // Fecha se clicar fora da caixa
-            if (e.target === modal) {
-                fecharModal();
-            }
-        });
-
-        btnModalSim.addEventListener('click', () => {
-            // 1. Zera as variáveis de estado do pedido
-            pedido.acerola = 0;
-            pedido.morango = 0;
-            pedido.acerola_cong = 0;
-            pedido.amora = 0;
-            pedido.framboesa = 0;
-            pedido.frutas_vermelhas = 0;
-            pedido.mirtilo = 0;
-            pedido.polpas = {};
-
-            // 2. Zera os contadores visuais na página
-            document.getElementById('qtd-acerola').innerText = '0';
-            document.getElementById('qtd-morango').innerText = '0';
-            
-            // Zera os novos congelados
-            ['acerola_cong', 'amora', 'framboesa', 'frutas_vermelhas', 'mirtilo'].forEach(item => {
-                document.getElementById('qtd-' + item).innerText = '0';
-            });
-
-            document.querySelectorAll('.lista-sabores li').forEach(li => {
-                li.classList.remove('ativo');
-                li.querySelector('.controls-polpa').style.display = 'none';
-                li.querySelector('.qtd-valor').innerText = '0';
-            });
-
-            atualizarTotais(); // Recalcula tudo (que irá para zero)
-            fecharModal(); // Fecha o modal após a limpeza
-        });
-    </script>
+    // Scroll Reveal for Sections
+    gsap.utils.toArray('.gsap-fade-up').forEach(element => {
+      gsap.from(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+    });
+  </script>
 </body>
 </html>
