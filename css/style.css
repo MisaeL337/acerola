@@ -1,279 +1,440 @@
-/* --- Configurações Gerais --- */
+/* === GOOGLE FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* === TOKENS === */
 :root {
-    --cor-acerola: #D9381E; /* Vermelho vibrante */
-    --cor-folha: #4A7c59;   /* Verde natural */
-    --cor-fundo: #FAFAFA;
-    --cor-texto: #333;
-    --cor-zap: #25D366;
+    --cor-acerola:        #BE3526;
+    --cor-acerola-hover:  #962A1E;
+    --cor-acerola-suave:  #FCECEA;
+    --cor-folha:          #2E7D52;
+    --cor-folha-suave:    #EAF4EE;
+    --cor-fundo:          #F5F1ED;
+    --cor-superficie:     #FFFFFF;
+    --cor-borda:          #E6DED5;
+    --cor-texto:          #1A1614;
+    --cor-texto-suave:    #6C6460;
+    --cor-zap:            #25D366;
+    --sombra-card:        0 2px 10px rgba(26,22,20,0.07), 0 0 0 1px rgba(26,22,20,0.04);
+    --sombra-hover:       0 10px 32px rgba(26,22,20,0.13);
+    --radius-card:        18px;
+    --radius-btn:         50px;
+    --transicao:          all 0.28s ease;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.7;
 }
 
-body { 
-    background-color: var(--cor-fundo); 
-    color: var(--cor-texto); 
-    line-height: 1.6; 
-}
-
-/* --- Cabeçalho --- */
+/* =====================================================
+   HEADER — branco, barra accent acerola no topo
+   ===================================================== */
 header {
-    background-color: var(--cor-acerola);
-    color: white;
-    padding: 1rem;
+    background: var(--cor-superficie);
+    border-top: 4px solid var(--cor-acerola);
+    border-bottom: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    padding: 1rem 2rem;
     text-align: center;
-    position: sticky; /* Fica fixo no topo */
+    position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.07);
 }
 
-header h1 { font-size: 1.5rem; }
-header p { font-size: 0.9rem; opacity: 0.9; }
+header h1 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--cor-acerola);
+    letter-spacing: 0.01em;
+}
 
-/* --- Seção Hero (Destaque Principal) --- */
+header p {
+    font-size: 0.68rem;
+    color: var(--cor-texto-suave);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* =====================================================
+   HERO — glassmorphism card + wave no fim
+   ===================================================== */
 .hero {
-    /* Fundo com gradiente escuro para ler o texto e imagem de fundo */
-    /* ↓↓↓ ESPAÇO PARA A FOTO DE FUNDO: Mude o nome do arquivo aqui dentro ↓↓↓ */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/djtguoi8i/image/upload/red-3929193_640_erlzeh.png');
+    background:
+        linear-gradient(160deg, rgba(18, 5, 3, 0.58) 0%, rgba(8, 2, 1, 0.84) 100%),
+        url('https://res.cloudinary.com/djtguoi8i/image/upload/red-3929193_640_erlzeh.png');
     background-size: cover;
     background-position: center;
-    color: white;
-    padding: 4rem 1rem;
+    padding: 5rem 1.5rem 7.5rem;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.hero h2 { 
-    font-size: 2.5rem; 
-    margin-bottom: 1rem; 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+/* Wave de transição para o conteúdo abaixo */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: var(--cor-fundo);
+    clip-path: ellipse(58% 100% at 50% 100%);
+    pointer-events: none;
+}
+
+/* Card glassmorphism para o texto */
+.hero-content {
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 24px;
+    padding: 2.75rem 2.5rem 2.25rem;
+    max-width: 600px;
+    width: 100%;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.025em;
+    text-shadow: none;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    opacity: 0.88;
+    font-weight: 300;
 }
 
 .frete-aviso {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    /* Estilo mais minimalista, sem fundo ou borda, com sombra para legibilidade */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    margin-top: 1.1rem;
+    font-size: 0.92rem;
+    background: rgba(37, 211, 102, 0.16);
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    color: #a8f7c5;
 }
 
 .btn-cta {
     background-color: var(--cor-zap);
     color: white;
-    padding: 15px 30px;
+    padding: 13px 30px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: var(--radius-btn);
     display: inline-block;
-    margin-top: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
+    margin-top: 1.1rem;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.38);
+    transition: var(--transicao);
 }
 
-.btn-cta:hover { transform: scale(1.05); }
-
-/* --- Layout Container --- */
-.container { 
-    max-width: 1000px; 
-    margin: 0 auto; 
-    padding: 2rem 1rem; 
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.48);
 }
 
-.section-header { text-align: center; }
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 4rem;
+}
+
+/* =====================================================
+   SECTION TITLES
+   ===================================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
 
 .section-title {
     text-align: center;
-    color: var(--cor-acerola);
+    color: var(--cor-texto);
     margin-bottom: 2rem;
-    font-size: 1.8rem;
-    border-bottom: 2px solid var(--cor-folha);
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     display: inline-block;
-    padding-bottom: 5px;
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
 }
 
-/* --- Grid de Produtos --- */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3.5px;
+    background: var(--cor-acerola);
+    border-radius: 2px;
+    margin: 0.5rem auto 0;
+}
+
+/* =====================================================
+   SWITCH — pill container destaque
+   ===================================================== */
+.switch-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    background: var(--cor-superficie);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    box-shadow: var(--sombra-card);
+    border: 1px solid var(--cor-borda);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    height: 31px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #D0C6BB;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 23px; width: 23px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22);
+}
+
+input:checked + .slider { background-color: var(--cor-folha); }
+input:checked + .slider:before { transform: translateX(27px); }
+
+/* =====================================================
+   GRID DE PRODUTOS
+   ===================================================== */
 .produtos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.75rem;
 }
 
-/* --- Carrossel de Produtos (Novo) --- */
+/* =====================================================
+   CARROSSEL
+   ===================================================== */
 .produtos-carousel {
     display: flex;
     overflow-x: auto;
     gap: 1.5rem;
-    padding: 1rem 0.5rem; /* Espaço para a sombra do card não cortar */
+    padding: 0.5rem 0.5rem 1.5rem;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
 
-.produtos-carousel .card {
-    min-width: 280px; /* Largura fixa para os cards no carrossel */
-    flex: 0 0 auto;   /* Garante que não encolham */
-    scroll-snap-align: center; /* Centraliza o card ao soltar */
-}
+.produtos-carousel .card { min-width: 270px; flex: 0 0 auto; scroll-snap-align: center; }
+.produtos-carousel::-webkit-scrollbar { height: 4px; }
+.produtos-carousel::-webkit-scrollbar-thumb { background: var(--cor-borda); border-radius: 10px; }
+.produtos-carousel::-webkit-scrollbar-track { background: transparent; }
 
-/* Estilo da barra de rolagem (igual polpas) */
-.produtos-carousel::-webkit-scrollbar { height: 6px; }
-.produtos-carousel::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
-.produtos-carousel::-webkit-scrollbar-track { background-color: #f1f1f1; }
-
+/* =====================================================
+   CARD — borda superior colorida como assinatura
+   ===================================================== */
 .card {
-    background: white;
-    border-radius: 10px;
+    background: var(--cor-superficie);
+    border-radius: var(--radius-card);
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--sombra-card);
     text-align: center;
-    border: 1px solid #eee;
-    transition: transform 0.2s;
+    border: 1px solid var(--cor-borda);
+    border-top: 3px solid var(--cor-acerola);
+    transition: var(--transicao);
 }
 
-/* Destaque para o Carro Chefe (Acerola) */
+.card:hover {
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-5px);
+}
+
 .card.destaque {
-    border: 2px solid var(--cor-acerola);
-    transform: scale(1.02); /* Levemente maior */
+    border-top-width: 3px;
+    border-top-color: var(--cor-acerola);
 }
 
 .card-img {
-    height: 200px;
-    background-color: #ddd;
+    height: 220px;
+    background-color: var(--cor-fundo);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
-    position: relative;
+    overflow: hidden;
 }
 
-/* Cores de fundo placeholder para as imagens */
-.img-acerola { background-color: #ffcccb; }
-.img-maracuja { background-color: #fffacd; }
-.img-caju { background-color: #ffe4b5; }
-.img-morango { background-color: #ffb6c1; }
-.img-morango-congelado { background-color: #c21e56; color: white; } /* Cor mais forte para diferenciar */
-.img-uva { background-color: #e6e6fa; }
-.img-acerola-cong { background-color: #b22222; color: white; } /* Vermelho escuro */
-.img-amora { background-color: #4b0082; color: white; } /* Roxo escuro */
-.img-framboesa { background-color: #e30b5d; color: white; } /* Rosa escuro */
-.img-frutas-vermelhas { background-color: #800000; color: white; } /* Vinho */
-.img-mirtilo { background-color: #483d8b; color: white; } /* Azul escuro */
+.card-body { padding: 1.5rem 1.25rem 1.75rem; }
 
-.img-text { font-weight: bold; opacity: 0.5; }
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
 
-.card-body { padding: 1.5rem; }
-.card-title { font-size: 1.3rem; color: var(--cor-folha); margin-bottom: 0.5rem; }
-.card-price { font-size: 1.2rem; font-weight: bold; color: var(--cor-acerola); }
+.card-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cor-acerola);
+    margin-bottom: 0.2rem;
+}
 
 .tag-destaque {
-    background-color: var(--cor-acerola);
-    color: white;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    border-radius: 20px;
+    background: var(--cor-acerola-suave);
+    color: var(--cor-acerola);
+    padding: 3px 12px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    border-radius: 50px;
     margin-bottom: 10px;
     display: inline-block;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
-/* Botão dentro dos Cards */
-.btn-card {
-    display: block;
-    background-color: var(--cor-zap);
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-weight: bold;
-    transition: background 0.2s;
-}
-.btn-card:hover { background-color: #1ebe57; }
-
-/* --- Controles de Quantidade --- */
+/* =====================================================
+   CONTROLES DE QUANTIDADE
+   ===================================================== */
 .qtd-controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    margin: 15px 0;
-    background: #f0f0f0;
-    padding: 5px;
-    border-radius: 25px;
+    gap: 18px;
+    margin: 14px auto;
+    background: var(--cor-fundo);
+    padding: 5px 10px;
+    border-radius: 50px;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    border: 1px solid var(--cor-borda);
 }
 
 .btn-qtd {
     background-color: var(--cor-folha);
     color: white;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 32px; height: 32px;
     border-radius: 50%;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.1s;
+    transition: var(--transicao);
+    font-family: 'Poppins', sans-serif;
 }
 
+.btn-qtd:hover { background: var(--cor-acerola); transform: scale(1.1); }
 .btn-qtd:active { transform: scale(0.9); }
 
-.qtd-valor { font-weight: bold; font-size: 1.2rem; min-width: 20px; }
-.subtotal { font-size: 0.9rem; color: #666; margin-top: 5px; font-weight: bold; }
+.qtd-valor { font-weight: 700; font-size: 1.05rem; min-width: 24px; color: var(--cor-texto); }
+.subtotal { font-size: 0.82rem; color: var(--cor-texto-suave); font-weight: 500; margin-top: 4px; }
 
-/* --- Lista de Sabores (Cardápio) --- */
+/* =====================================================
+   LISTA DE SABORES
+   ===================================================== */
 .lista-sabores-container {
-    margin-top: 3rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 3.5rem;
+    background: var(--cor-superficie);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-card);
+    box-shadow: var(--sombra-card);
+    border: 1px solid var(--cor-borda);
+    border-top: 3px solid var(--cor-folha);
 }
 
 .lista-sabores {
     list-style: none;
-    display: flex; /* Muda de Grid para Flex (linha) */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    gap: 15px;
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
     text-align: center;
-    padding-bottom: 15px; /* Espaço para a barra de rolagem não colar */
-    scroll-snap-type: x mandatory; /* Faz o scroll parar certinho no card */
-    -webkit-overflow-scrolling: touch; /* Rolagem suave no iPhone */
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Estiliza a barra de rolagem para ficar bonita */
-.lista-sabores::-webkit-scrollbar { height: 6px; }
-.lista-sabores::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
-.lista-sabores::-webkit-scrollbar-track { background-color: #f1f1f1; }
+.lista-sabores::-webkit-scrollbar { height: 4px; }
+.lista-sabores::-webkit-scrollbar-thumb { background: var(--cor-borda); border-radius: 10px; }
+.lista-sabores::-webkit-scrollbar-track { background: transparent; }
 
 .lista-sabores li {
-    flex: 0 0 160px; /* Largura fixa para cada card no carrossel */
-    scroll-snap-align: start; /* Alinha o card ao inicio ao soltar o scroll */
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #eee;
+    flex: 0 0 148px;
+    scroll-snap-align: start;
+    background: var(--cor-fundo);
+    padding: 10px 8px;
+    border-radius: 12px;
+    border: 1.5px solid transparent;
     color: var(--cor-folha);
     font-weight: 500;
-    cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
-    transition: all 0.2s;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: var(--transicao);
 }
 
 .lista-sabores li.ativo {
-    background-color: white;
+    background: var(--cor-superficie);
     border-color: var(--cor-acerola);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(190, 53, 38, 0.12);
+    color: var(--cor-acerola);
 }
+
+.lista-sabores li:hover {
+    background: var(--cor-superficie);
+    border-color: var(--cor-borda);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-card);
+}
+
+.lista-sabores li img {
+    display: block !important;
+    height: 80px !important;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.lista-sabores li.ativo img { height: 240px !important; }
 
 .controls-polpa {
     margin-top: 10px;
@@ -283,124 +444,122 @@ header p { font-size: 0.9rem; opacity: 0.9; }
     gap: 10px;
 }
 
-.lista-sabores li:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05);
-}
-
-/* Configuração da Imagem (Efeito de Expansão) */
-.lista-sabores li img {
-    display: block !important; /* Garante que a foto apareça sempre */
-    height: 80px !important;   /* Altura inicial (miniatura) */
-    transition: all 0.3s ease; /* Faz a animação de crescer ser suave */
-}
-
-.lista-sabores li.ativo img {
-    height: 250px !important; /* Altura expandida quando clica */
-}
-
-/* Títulos das Categorias do Carrossel */
 .titulo-categoria {
-    color: var(--cor-acerola);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    border-left: 4px solid var(--cor-folha);
-    padding-left: 10px;
+    color: var(--cor-texto-suave);
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-left: 12px;
+    border-left: 3px solid var(--cor-folha);
     text-align: left;
 }
 
-/* --- Barra de Resumo do Pedido (Fixo Embaixo) --- */
+/* =====================================================
+   RESUMO BAR
+   ===================================================== */
 .resumo-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 0; left: 0;
     width: 100%;
-    background: white;
-    border-top: 3px solid var(--cor-acerola);
-    padding: 15px;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+    background: var(--cor-superficie);
+    border-top: 2px solid var(--cor-acerola);
+    padding: 14px 24px;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 999;
-    transform: translateY(100%); /* Escondido por padrão */
-    transition: transform 0.3s ease-out;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .resumo-bar.visible { transform: translateY(0); }
 
-/* Botão Limpar Carrinho */
 .btn-limpar {
     background: none;
-    border: 1px solid #ccc;
-    color: #666;
-    padding: 10px 15px;
+    border: 1.5px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+    padding: 9px 16px;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    font-family: 'Poppins', sans-serif;
     margin-right: 10px;
-    transition: all 0.2s;
+    transition: var(--transicao);
 }
-.btn-limpar:hover { background-color: #f0f0f0; color: #333; border-color: #999; }
 
-/* --- Agenda / Onde Encontrar --- */
+.btn-limpar:hover { background: var(--cor-fundo); color: var(--cor-texto); border-color: #aaa; }
+
+/* =====================================================
+   AGENDA
+   ===================================================== */
 .agenda {
-    background-color: #e9f5ec;
-    padding: 2rem;
-    border-radius: 10px;
-    margin-top: 3rem;
+    background: var(--cor-folha-suave);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-card);
+    margin-top: 3.5rem;
+    border: 1px solid #C8E5D2;
+    border-left: 4px solid var(--cor-folha);
 }
 
-.agenda-title {
-    border: none; 
-    display: block;
-}
-
+.agenda-title { border: none; display: block; }
 .agenda ul { list-style: none; }
 
 .agenda li {
-    background: white;
+    background: var(--cor-superficie);
     margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    border-left: 5px solid var(--cor-folha);
+    padding: 14px 18px;
+    border-radius: 10px;
+    border-left: 4px solid var(--cor-folha);
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permite quebrar linha no celular */
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .agenda-note {
-    text-align: center; 
-    margin-top: 1rem; 
-    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
 }
 
-/* --- Sobre Nós --- */
+/* =====================================================
+   SOBRE NÓS
+   ===================================================== */
 .sobre-nos {
-    margin-top: 3rem;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 3.5rem;
+    background: var(--cor-superficie);
+    padding: 2.75rem 2rem;
+    border-radius: var(--radius-card);
+    box-shadow: var(--sombra-card);
     text-align: center;
+    border: 1px solid var(--cor-borda);
 }
 
 .sobre-nos p {
-    color: #555;
+    color: var(--cor-texto-suave);
     margin-bottom: 1rem;
-    font-size: 1.05rem;
-    max-width: 800px;
+    font-size: 0.97rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.85;
 }
 
-/* --- Rodapé --- */
+/* =====================================================
+   FOOTER
+   ===================================================== */
 footer {
-    background-color: #222;
-    color: white;
-    padding: 3rem 1rem;
-    padding-bottom: 120px; /* Espaço para a barra de resumo ficar sobre o rodapé sem esconder texto */
-    margin-top: 3rem;
+    background: #1C1410;
+    color: rgba(255, 255, 255, 0.72);
+    padding: 4rem 1.5rem;
+    padding-bottom: 130px;
+    margin-top: 4rem;
 }
 
 .footer-container {
@@ -408,124 +567,90 @@ footer {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    text-align: center; /* Centralizado no celular fica melhor */
+    gap: 2.5rem;
+    text-align: center;
 }
 
 .footer-col h4 {
-    color: var(--cor-acerola);
+    color: #F4C8C2;
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.footer-col p {
+    font-size: 0.87rem;
+    line-height: 1.75;
+    opacity: 0.6;
 }
 
 .footer-copy {
     text-align: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.8rem;
-    opacity: 0.7;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.74rem;
+    opacity: 0.4;
 }
 
-/* Link do Desenvolvedor (Efeito Neon) */
 .dev-link {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-.dev-link:hover {
-    color: var(--cor-zap);
-    text-shadow: 0 0 10px rgba(37, 211, 102, 0.8);
+    font-weight: 600;
+    transition: var(--transicao);
 }
 
-/* Ícones de Redes Sociais no Rodapé */
-.footer-icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
+.dev-link:hover { color: var(--cor-zap); }
+
+/* === SOCIAL FOOTER === */
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 0.5rem;
 }
 
-/* --- Botão Flutuante do WhatsApp --- */
-.zap-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--cor-zap);
-    color: white;
-    width: 60px;
-    height: 60px;
+.footer-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     text-decoration: none;
-    z-index: 200;
-    transition: transform 0.3s;
+    transition: var(--transicao);
+    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.07);
 }
 
-.zap-float:hover {
-    transform: scale(1.1);
+.footer-social-btn:hover { transform: translateY(-3px); border-color: transparent; }
+
+.footer-wapp:hover {
+    background: #25D366;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-/* Ajuste para telas muito pequenas */
-@media (max-width: 400px) {
-    .hero h2 { font-size: 2rem; }
-    .agenda li { flex-direction: column; text-align: center; }
+.footer-insta:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 6px 20px rgba(214, 36, 159, 0.4);
 }
 
-/* --- Toggle Atacado/Varejo --- */
-.switch-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    color: var(--cor-folha);
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
-}
-
-.switch input { opacity: 0; width: 0; height: 0; }
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute; content: "";
-    height: 20px; width: 20px; left: 4px; bottom: 4px;
-    background-color: white; transition: .4s; border-radius: 50%;
-}
-
-input:checked + .slider { background-color: var(--cor-acerola); }
-input:checked + .slider:before { transform: translateX(22px); }
-
-/* --- Modal de Confirmação --- */
+/* =====================================================
+   MODAL
+   ===================================================== */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1001; /* Acima de tudo */
+    z-index: 1001;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
@@ -539,54 +664,112 @@ input:checked + .slider:before { transform: translateX(22px); }
 
 .modal-content {
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-card);
     text-align: center;
-    max-width: 400px;
+    max-width: 380px;
     width: 90%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 44px rgba(0, 0, 0, 0.2);
     transform: scale(0.9);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.modal-overlay.visible .modal-content {
-    transform: scale(1);
-}
+.modal-overlay.visible .modal-content { transform: scale(1); }
 
-.modal-content h4 {
-    color: var(--cor-acerola);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
+.modal-content h4 { color: var(--cor-texto); margin-bottom: 0.7rem; font-size: 1.25rem; font-weight: 600; }
+.modal-content p { color: var(--cor-texto-suave); font-size: 0.93rem; }
 
 .modal-botoes {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
-.btn-modal-confirmar, .btn-modal-cancelar {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-modal-confirmar {
-    background-color: var(--cor-acerola);
-    color: white;
-}
-.btn-modal-confirmar:hover {
-    background-color: #b82f18;
-}
-
+.btn-modal-confirmar,
 .btn-modal-cancelar {
-    background-color: #eee;
-    color: #333;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: var(--transicao);
 }
-.btn-modal-cancelar:hover {
-    background-color: #ddd;
+
+.btn-modal-confirmar { background: var(--cor-acerola); color: white; }
+.btn-modal-confirmar:hover { background: var(--cor-acerola-hover); transform: translateY(-1px); }
+.btn-modal-cancelar { background: var(--cor-fundo); color: var(--cor-texto-suave); border: 1.5px solid var(--cor-borda); }
+.btn-modal-cancelar:hover { background: #EBE4DA; }
+
+/* =====================================================
+   WHATSAPP FLOAT
+   ===================================================== */
+.zap-float {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    background: var(--cor-zap);
+    color: white;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.44);
+    text-decoration: none;
+    z-index: 200;
+    transition: var(--transicao);
+}
+
+.zap-float:hover { transform: scale(1.08) translateY(-2px); }
+
+/* =====================================================
+   BOTÃO DE CARD
+   ===================================================== */
+.btn-card {
+    display: block;
+    background: var(--cor-zap);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transicao);
+}
+
+.btn-card:hover { background: #1ebe57; transform: translateY(-1px); }
+
+/* =====================================================
+   PLACEHOLDERS LEGADOS
+   ===================================================== */
+.img-acerola, .img-morango-congelado, .img-acerola-cong { background-color: #F9EDEC; }
+.img-maracuja                                            { background-color: #FDFAE9; }
+.img-caju                                               { background-color: #FEF4E4; }
+.img-morango, .img-framboesa                            { background-color: #FDEDF3; }
+.img-uva, .img-mirtilo                                  { background-color: #F0EAF8; }
+.img-amora                                              { background-color: #EDE4F5; }
+.img-frutas-vermelhas                                   { background-color: #F9EDEC; }
+.img-text                                               { font-weight: bold; opacity: 0.35; }
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+@media (max-width: 600px) {
+    .hero h2         { font-size: 2rem; }
+    .hero-content    { padding: 2rem 1.5rem 1.75rem; border-radius: 18px; }
+    .agenda li       { flex-direction: column; gap: 4px; }
+    .container       { padding: 2.5rem 1rem; }
+    .lista-sabores-container { padding: 1.75rem 1rem; }
+    .switch-container { padding: 0.5rem 1rem; }
+    .hero::after     { height: 50px; }
+}
+
+@media (max-width: 400px) {
+    .hero h2  { font-size: 1.7rem; }
+    header h1 { font-size: 1.2rem; }
 }
